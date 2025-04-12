@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using LingoSphere.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LingoSphere.Controllers
 {
@@ -41,11 +42,12 @@ namespace LingoSphere.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Languages = new SelectList(mostUsedLanguages);
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> GetGPTResponses (string query, string selectedLanguage)
+        public async Task<IActionResult> OpenGemini (string query, string selectedLanguage)
         {
             var apiKey = _configuration["GeminiAI:ApiKey"];
 
