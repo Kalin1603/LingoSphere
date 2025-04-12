@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - LingoSphere</title>
     <script type="importmap"></script>
+    <link rel="icon" href="~/images/favicon.png" type="image/svg+xml" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/LingoSphere.styles.css" asp-append-version="true" />
@@ -13,19 +14,14 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LingoSphere</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" height="30px" width="30px" /> LingoSphere</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -38,9 +34,28 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - LingoSphere - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="bg-slate-900 text-gray-300 py-3 shadow-inner mt-auto border-t">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center space-y-6">
+
+            <div class="text-center text-sm text-gray-400 leading-relaxed">
+                © @DateTime.Now.Year - LingoSphere by Kalin Todorov.<br>
+                All rights reserved. Unauthorized use is prohibited.
+            </div>
+
+            <div class="flex space-x-4">
+                <a href="https://github.com/Kalin1603" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub profile"
+                   class="flex items-center justify-center w-12 h-12 bg-slate-700 rounded-full text-gray-300
+                      hover:bg-gray-100 hover:text-slate-900
+                      transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                    <i class="bi bi-github text-2xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/k-todorov/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn profile"
+                   class="flex items-center justify-center w-12 h-12 bg-slate-700 rounded-full text-gray-300
+                      hover:bg-blue-600 hover:text-white
+                      transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+                    <i class="bi bi-linkedin text-2xl"></i>
+                </a>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
