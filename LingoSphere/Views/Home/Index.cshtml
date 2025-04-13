@@ -1,9 +1,9 @@
 ﻿<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form method="post" action="@Url.Action("OpenGemini")">
+            <form method="post" action="@Url.Action("OpenAIGPT")">
                 <div class="form-group">
-                    <textarea class="form-control" name="query" id="query" placeholder="Enter yours text" rows="4"></textarea>
+                    <textarea class="form-control" name="query" id="query" placeholder="Enter your text" rows="4"></textarea>
                 </div>
 
                 <br />
@@ -12,7 +12,7 @@
                     <select class="form-control" name="selectedLanguage" id="selectedLanguage">
                         @foreach (var language in ViewBag.Languages)
                         {
-                            <option value="@language">@language.Text</option>
+                            <option value="@language.Text">@language.Text</option>
                         }
                     </select>
                 </div>
@@ -25,6 +25,23 @@
                     </svg>
                 </button>
             </form>
+
+            @if (ViewBag.Translation != null)
+            {
+                <br />
+                <div class="alert alert-success mt-4" role="alert">
+                    <h5>Translated Text:</h5>
+                    <p>@ViewBag.Translation</p>
+                </div>
+            }
+
+            @if (ViewBag.Error != null)
+            {
+                <br />
+                <div class="alert alert-danger mt-4" role="alert">
+                    <strong>Error:</strong> @ViewBag.Error
+                </div>
+            }
         </div>
     </div>
 </div>
